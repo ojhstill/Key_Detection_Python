@@ -4,7 +4,7 @@ from music21 import *
 import pygame.midi as midi
 
 
-KEY_THRESHOLD = 0.9
+KEY_THRESHOLD = 1
 
 
 def midi_to_note(number):
@@ -40,7 +40,9 @@ def parse_midi_data(data):
 def analyse_key(stream_input):
     analysed_key = stream_input.analyze('key')
     if analysed_key.tonalCertainty() > KEY_THRESHOLD:
-        print(analysed_key, analysed_key.tonalCertainty())
+        if analysed_key != current_key:
+            print(analysed_key, analysed_key.tonalCertainty())
+            stream_input.plot('histogram', 'pitchClass')
 
 
 # for c in displayPart.recurse().getElementsByClass('Chord'):
@@ -57,6 +59,7 @@ if __name__ == '__main__':
     # Initialise variables.
     print("Initialise variables...")
     s = stream.Stream()
+    current_key = ''
     print("Complete.")
 
     # Scan devices for MIDI input.
