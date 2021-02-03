@@ -1,0 +1,4 @@
+PySimpleGUI
+music21
+matplotlib
+pygame
