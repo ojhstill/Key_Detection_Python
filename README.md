@@ -1,6 +1,10 @@
 # Live Musical Key Detection in Python
 
-Musical Key Detection in Python - ElecEng Year 4
+Python script Musical Key Detection in  - ElecEng Year 4
+
+Real-time musical key detection for MIDI devices for the forth year 'Music Performance Analysis Systems' autumn term module - Department of Electronic Engineering, University of York (2021).
+
+Coded in PyCharm with Python 3.7.9.
 
 ## Running the Program
 
